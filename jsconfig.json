@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": ".", 
     "paths": {
-      "@/*": ["./src/*"]
+      "@/lib/*": ["./src/lib/*"],
+      "@/models/*": ["./src/models/*"]
     }
-  }
+  },
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.mjs"],
+  "exclude": ["node_modules"]
 }

@@ -1,5 +1,5 @@
 import { connectDB } from '@/lib/connectDB';
-import Comment from '../../../../../models/Comment';
+import Comment from '@/models/Comment';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/article/auth/[...nextauth]/route';
 
@@ -33,15 +33,26 @@ export async function POST(req) {
 }
 
 export async function GET(req) {
-  const { searchParams } = new URL(req.url);
-  const articleSlug = searchParams.get('slug');
-
   try {
     await connectDB();
-    const comments = await Comment.find({ articleSlug }).sort({ createdAt: -1 });
+    const session = await getServerSession(req, authOptions);
+   
+    if (!session) {
+      return new Response(JSON.stringify({ message: "Unauthorized" }), { status: 401 });
+    }
+
+    const { searchParams } = new URL(req.url);
+    const articleId = searchParams.get('articleId');
+
+    if (!articleId) {
+      return new Response(JSON.stringify({ message: "Article ID is required" }), { status: 400 });
+    }
+
+    const comments = await Comment.find({ article: articleId }).sort({ createdAt: -1 });
     return new Response(JSON.stringify(comments), { status: 200 });
-  } catch (err) {
-    console.error('GET COMMENT ERROR:', err);
-    return new Response(JSON.stringify({ message: 'Server error' }), { status: 500 });
+
+  } catch (error) {
+    console.error("Error fetching comments:", error);
+    return new Response(JSON.stringify({ error: "Internal Server Error" }), { status: 500 });
   }
 }
