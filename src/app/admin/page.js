@@ -1,8 +1,8 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOptions";
 import { redirect } from "next/navigation";
-import { connectDB } from "../../../lib/connectDB";
-import Article from "../../../models/Article";
+import { connectDB } from "@/lib/connectDB";
+import Article from "@/models/Article";
 import Link from "next/link";
 import { revalidatePath } from "next/cache";
 
