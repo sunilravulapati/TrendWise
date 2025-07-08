@@ -1,5 +1,5 @@
-import { connectDB } from '@/lib/connectDB'; // Use alias for clarity
-import Article from '@/models/Article';     // Use alias for clarity
+import { connectDB } from '@/lib/connectDB';
+import Article from '@/models/Article';
 
 export async function GET(req, { params }) {
   try {

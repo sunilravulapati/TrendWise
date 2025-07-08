@@ -1,8 +1,7 @@
 import { connectDB } from '@/lib/connectDB';
 import Comment from '@/models/Comment';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '../api/article/auth/[...nextauth]/route';
-
+import { authOptions } from '@/lib/authOptions';
 export async function POST(req) {
   const session = await getServerSession(authOptions);
   if (!session) {
