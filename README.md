@@ -112,3 +112,9 @@ UNSPLASH_ACCESS_KEY="your_unsplash_access_key"
 # 1. Go to [https://trends.google.com/trends/trendingsearches/daily?geo=US](https://trends.google.com/trends/trendingsearches/daily?geo=US) in Incognito mode.
 # 2. Open browser DevTools (F12) -> Network tab.
 # 3. Refresh the page. Find a request to 'trendingsearches/daily'.
+
+## Demo Video
+(https://drive.google.com/file/d/1mjC_Tgsu0sKv-GO_6I_Fnz1QPP2eblSG/view?usp=sharing)
+
+## Deployment
+Currently under progress due to backend deployment configuration challenges. Live link will be shared once resolved.
