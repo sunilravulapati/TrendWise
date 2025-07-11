@@ -6,7 +6,7 @@
 
 ## 🚀 Overview
 
-TrendWise is an innovative web application that leverages AI to automatically generate articles on trending topics. It integrates with Google Trends to identify hot subjects, uses Google's Gemini AI to craft engaging content, and fetches relevant images from Unsplash. Users can explore trending articles, search for specific topics, and authenticated users can even trigger article generation. The application is built with Next.js, uses MongoDB for data storage, and is deployed on Vercel with scheduled article generation via Vercel Cron Jobs.
+TrendWise is an innovative web application that leverages AI to automatically generate articles on trending topics. It integrates with Google Trends to identify hot subjects, uses Google's Gemini AI to craft engaging content, and fetches relevant images from Unsplash. Users can explore trending articles, search for specific topics, and authenticated users can even trigger article generation. The application is built with Next.js, uses MongoDB for data storage.
 
 ---
 
